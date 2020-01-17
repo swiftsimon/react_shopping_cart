@@ -5,7 +5,7 @@ import './counter.css';
 class Counter extends Component {
 
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
   }
 
   render() {
@@ -14,8 +14,9 @@ class Counter extends Component {
       <div>
         { this.props.children }
         <div className={ this.getOutputClasses() }>{ this.getValueBadge() }</div>
-        <button className="button_small add" onClick={ this.handleIncrease}>+</button>
-        <button className="button_small remove" onClick={this.handleDecrease}>-</button>
+        <button className="button button_small add" onClick={ this.handleIncrease}>+</button>
+        <button className="button button_small remove" onClick={this.handleDecrease}>-</button>
+        <button className="button button_med delete" onClick={() => this.props.onDelete(this.props.counter.id)}>delete</button>
       </div>
 
     );

@@ -1,16 +1,24 @@
+.button {
+  height: 4rem;
+  border-radius: 1.5rem;
+  font-size: 2rem;
+  padding: 5px 10px;
+  margin: .5rem;
+}
+
+.button:hover {
+  opacity: .5;
+  cursor: pointer;
+}
 
 .button_small {
   width: 4rem;
-  height: 4rem;
-  border-radius: 1.5rem;
   color: white;
-  font-size: 2rem;
-  margin: .5rem;
-  padding: 5px 10px;
 }
 
-.button_small:hover {
-  opacity: .5;
+.button_med {
+  width: 8rem;
+  height: 4rem;
 }
 
 .output_text {
@@ -32,6 +40,11 @@
 
 .remove {
   background-color: red;
+}
+
+.delete {
+  background-color: black;
+  color: yellow;
 }
 
 .warning {
