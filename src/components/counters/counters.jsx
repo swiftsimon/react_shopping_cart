@@ -6,21 +6,22 @@ import './counters.css';
 class Counters extends Component {
 
   render() {
+    const {counters, onDelete, onIncrease, onDecrease, onReset} = this.props
     return (
       <div>
-        { this.props.counters.map(counter => 
+        { counters.map(counter => 
           <Counter key={ counter.id } 
           counter={ counter } 
-          onDelete={ this.props.onDelete }
-          onIncrease={ this.props.onIncrease }
-          onDecrease={ this.props.onDecrease }
+          onDelete={ onDelete }
+          onIncrease={ onIncrease }
+          onDecrease={ onDecrease }
           >
             {/* example of child props */}
             <h4>{ counter.title }</h4>
           </Counter>
           ) 
         }
-        <button className="reset_button" onClick={ this.props.onReset }>Reset All</button>
+        <button className="reset_button" onClick={ onReset }>Reset All</button>
       </div>
     );
   }
