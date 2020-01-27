@@ -21,7 +21,10 @@ class App extends Component {
 
   handleDelete = (counterId) => {
     const counters = this.state.counters.filter(item => item.id !== counterId);
-    this.setState({ counters })
+    const currentCounter = this.state.counters.filter(item => item.id === counterId);
+    const currentCounterValue = currentCounter[0].value;
+    const itemCount = this.state.itemCount - currentCounterValue;
+    this.setState({ counters, itemCount });
   }
 
   handleReset = () => {
@@ -29,7 +32,7 @@ class App extends Component {
       c.value = 0;
       return c
     });
-    this.setState({ counters });
+    this.setState({ counters, itemCount:0 });
   }
 
   handleIncrease = (counter) => {
@@ -37,7 +40,9 @@ class App extends Component {
     const index = counters.indexOf(counter);
     counters[index] = {...counter};
     counters[index].value++;
-    this.setState({ counters });
+
+    const itemCount = this.state.itemCount + 1;
+    this.setState({ counters, itemCount });
   }
 
   handleDecrease = (counter) => {
@@ -46,7 +51,8 @@ class App extends Component {
     const index = counters.indexOf(counter);
     counters[index] = {...counter};
     counters[index].value--;
-    this.setState({ counters });
+    const itemCount = this.state.itemCount - 1;
+    this.setState({ counters, itemCount });
   }
 
   findItemCount = () => {

@@ -2,10 +2,12 @@ import React from 'react';
 
 import './nav.css';
 
-function Nav(props) {
+const Nav = ({itemCount}) => {
   return(
-    <div className="nav_wrapper">Total items in cart is {props.itemCount}</div>
-  ) 
-}
+    <nav className="nav_wrapper">
+      <span>Total items in cart is {itemCount}</span>
+    </nav>
+  );
+};
 
 export default Nav;
